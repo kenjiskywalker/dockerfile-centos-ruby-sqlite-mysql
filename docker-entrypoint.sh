@@ -19,7 +19,7 @@ if [ -z "$(ls -A /var/lib/mysql)" -a "${1%_safe}" = 'mysqld' ]; then
                 CREATE USER 'root'@'%' IDENTIFIED BY '${MYSQL_ROOT_PASSWORD}' ;
                 GRANT ALL ON *.* TO 'root'@'%' WITH GRANT OPTION ;
                 DROP DATABASE IF EXISTS test ;
-        EOSQL
+EOSQL
 
         if [ "$MYSQL_DATABASE" ]; then
                 echo "CREATE DATABASE IF NOT EXISTS $MYSQL_DATABASE ;" >> "$TEMP_FILE"
