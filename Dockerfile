@@ -19,14 +19,14 @@ RUN gem update --system
 RUN gem install bundler --no-rdoc --no-ri
 
 # Install sqlite
-RUN yum install -y sqlite
+RUN yum install -y sqlite sqlite-devel
 
 ### add mysql user
 RUN groupadd -r mysql && useradd -r -g mysql mysql
 
 ### MySQL install
 RUN yum install -y http://repo.mysql.com/$MYSQL_RPM_VERSION
-RUN yum install -y mysql-community-server
+RUN yum install -y mysql-community-server mysql-community-devel
 
 ### https://github.com/docker-library/mysql
 
